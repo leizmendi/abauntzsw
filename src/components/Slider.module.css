@@ -1,0 +1,19 @@
+.sliderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%; /* Máximo ancho para pantallas grandes */
+    margin: 0 auto; /* Para centrar el slider en la página */
+  }
+  
+  .slide {
+    width: 100%; /* Aseguramos que la imagen ocupe todo el espacio disponible dentro del contenedor */
+    text-align: center; /* Centramos el texto y la imagen */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra visible abajo */
+  }
+  .sliderImage {
+    width: 100%; /* Las imágenes serán responsivas y escalarán con el contenedor */
+    max-width: 100%; /* Previene que las imágenes excedan el tamaño del contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien en su contenedor */
+  }

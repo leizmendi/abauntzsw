@@ -1,0 +1,10 @@
+.legal-content h2 {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .legal-content p {
+    margin-bottom: 1em;
+  }
