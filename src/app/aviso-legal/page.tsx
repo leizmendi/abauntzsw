@@ -1,35 +1,25 @@
 "use client";
 
 import { useState, useEffect } from "react"
-import { useRouter, useSearchParams } from 'next/navigation'
 import { Footer } from "@/components/Footer"
 import { legalTranslations, LegalTranslations } from '@/utils/translations_legal'
 import { footerTranslations, FooterTranslations } from '@/utils/translations_footer'
 import { Navbar } from "@/components/Navbar";
 import { Language } from '@/utils/types'
+import { getStoredLanguage, setStoredLanguage } from "@/utils/languageUtils";
 import './styles.css'  // Importa los estilos CSS
 
 export default function LegalNoticePage() {
-  const router = useRouter()
-  const searchParams = useSearchParams()
-  const [language, setLanguage] = useState<Language>(() => {
-    const lang = searchParams.get('lang')
-    return (lang === 'es' || lang === 'eu') ? lang : 'es'
-  })
+  const [language, setLanguage] = useState<Language>(getStoredLanguage())
   const t: LegalTranslations = legalTranslations[language]
   const footerT: FooterTranslations = footerTranslations[language]
 
-  useEffect(() => {
-    const lang = searchParams.get('lang')
-    if (lang && (lang === 'es' || lang === 'eu')) {
-      setLanguage(lang)
-    }
-  }, [searchParams])
+
 
   const toggleLanguage = () => {
     const newLang = language === 'es' ? 'eu' : 'es'
     setLanguage(newLang)
-    router.push(`/aviso-legal?lang=${newLang}`)
+    setStoredLanguage(newLang)
   }
 
   return (

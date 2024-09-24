@@ -14,7 +14,7 @@ export const Footer: React.FC<FooterProps> = ({ translations, language }) => {
           {translations.rights}
         </p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4" href={`/aviso-legal?lang=${language}`}>
+          <Link className="text-xs hover:underline underline-offset-4" href={`/aviso-legal`}>
             {translations.legal}
           </Link>
         </nav>

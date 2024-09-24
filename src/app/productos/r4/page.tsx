@@ -3,31 +3,25 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { useRouter, useSearchParams } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { Globe, ArrowLeft } from "lucide-react"
 import { Navbar } from '@/components/Navbar';
 import { Footer } from "@/components/Footer";
 
 import { Language } from "@/utils/types";
+import { getStoredLanguage, setStoredLanguage } from "@/utils/languageUtils";
 import r4Translations from "@/utils/translations_r4";
 import { footerTranslations, FooterTranslations } from '@/utils/translations_footer'
 
 export default function R4Page() {
-    const searchParams = useSearchParams()
-    const [language, setLanguage] = useState<Language>(() => {
-        const lang = searchParams.get('lang')
-        return (lang === 'es' || lang === 'eu') ? lang : 'es'
-    })
+      const [language, setLanguage] = useState<Language>(getStoredLanguage())
     const t = r4Translations[language]
     const footerT: FooterTranslations = footerTranslations[language]
 
     const toggleLanguage = () => {
         const newLang = language === 'es' ? 'eu' : 'es'
         setLanguage(newLang)
-        const url = new URL(window.location.href)
-        url.searchParams.set('lang', newLang)
-        window.history.pushState({}, '', url)
+        setStoredLanguage(newLang)
       }
   return (
     <div className="flex flex-col min-h-screen bg-white">

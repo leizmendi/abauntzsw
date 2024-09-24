@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react"
-import { useRouter, useSearchParams } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Check } from "lucide-react"
 import { Navbar } from "@/components/Navbar"
@@ -10,30 +9,20 @@ import Link from "next/link"
 import Image from "next/image"
 
 import { Language } from "@/utils/types";
+import { getStoredLanguage, setStoredLanguage } from "@/utils/languageUtils";
 import h4Translations from "@/utils/translations_h4";
 import { footerTranslations, FooterTranslations } from '@/utils/translations_footer'
 
 export default function H4Page() {
-  const router = useRouter()
-  const searchParams = useSearchParams()
-  const [language, setLanguage] = useState<Language>(() => {
-    const lang = searchParams.get('lang')
-    return (lang === 'es' || lang === 'eu') ? lang : 'es'
-  })
+  const [language, setLanguage] = useState<Language>(getStoredLanguage())
   const t = h4Translations[language]
   const footerT: FooterTranslations = footerTranslations[language]
 
-  useEffect(() => {
-    const lang = searchParams.get('lang')
-    if (lang && (lang === 'es' || lang === 'eu')) {
-      setLanguage(lang)
-    }
-  }, [searchParams])
 
   const toggleLanguage = () => {
     const newLang = language === 'es' ? 'eu' : 'es'
     setLanguage(newLang)
-    router.push(`/productos/h4?lang=${newLang}`)
+    setStoredLanguage(newLang)
   }
 
   return (
