@@ -4,7 +4,7 @@ const nextConfig = {
         remotePatterns:[
             {
               protocol: 'https',        // Protocolo (http o https)
-              hostname: 'hebbkx1anhila5yf.public.blob.vercel-storage.com',  // Dominio
+              hostname: 'new.abauntzsoftware.com',  // Dominio
               pathname: '/**',          // (opcional) Patrón de rutas (/** permite todas)
             },
           ],
