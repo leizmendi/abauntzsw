@@ -52,6 +52,7 @@ export interface HomeTranslations {
     name: string;
     email: string;
     phone: string;
+    message: string;
     submit: string;
   };
 }
@@ -73,12 +74,12 @@ export const homeTranslations: Record<string, HomeTranslations> = {
     products: {
       title: "Nuestros Productos",
       r4: {
-        title: "R4 - Software para Bar-Restaurante",
+        title: "Software para Bar-Restaurante",
         description: "Gestión completa de ventas, emisión de tiques, mesas, camareros, comandas y reservas para tu negocio de hostelería.",
         cta: "Más sobre R4",
       },
       h4: {
-        title: "H4 - Gestión de Alojamientos",
+        title: "Gestión de Alojamientos",
         description: "Software para hoteles, casas rurales y campings. Integración con motor de reservas y channel manager a un precio competitivo.",
         cta: "Descubre H4",
       },
@@ -114,6 +115,7 @@ export const homeTranslations: Record<string, HomeTranslations> = {
       name: "Nombre",
       email: "Email",
       phone: "Teléfono",
+      message: "Mensaje",
       submit: "Solicitar información",
     },
   },
@@ -133,12 +135,12 @@ export const homeTranslations: Record<string, HomeTranslations> = {
     products: {
       title: "Gure Produktuak",
       r4: {
-        title: "R4 - Taberna-Jatetxeetarako Softwarea",
+        title: "Taberna-Jatetxeetarako Softwarea",
         description: "Salmenten kudeaketa osoa, tiketen jaulkipena, mahaiak, zerbitzariak, eskaerak eta erreserbak zure ostalaritza negoziorako.",
         cta: "Gehiago R4-ri buruz",
       },
       h4: {
-        title: "H4 - Ostatuen Kudeaketa",
+        title: "Ostatuen Kudeaketa",
         description: "Hoteletarako, landa-etxeetarako eta kanpinetarako softwarea. Erreserba motorra eta channel manager-arekin integrazioa prezio lehiakorrean.",
         cta: "H4 ezagutu",
       },
@@ -174,6 +176,7 @@ export const homeTranslations: Record<string, HomeTranslations> = {
       name: "Izena",
       email: "Emaila",
       phone: "Telefonoa",
+      message: "Mezua",
       submit: "Informazioa eskatu",
     },
 

@@ -1,0 +1,28 @@
+.carouselContainer {
+    max-width: 50%;
+    min-height: 100px;
+    margin: 0 auto; 
+    position: relative; 
+    box-shadow: 0px 14px 16px rgba(0, 0, 0, 1); /* Sombra inferior */
+    overflow: hidden; /* Asegura que las imágenes no se desborden */
+    aspect-ratio: 960 / 345; /* Mantiene la relación de aspecto de las imágenes *
+  }
+  @media (max-width: 1200px) { /* Para pantallas medianas a grandes */
+    .carouselContainer {
+      max-width: 85%; /* Más ancho en pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 768px) { /* Para pantallas pequeñas */
+    .carouselContainer {
+      max-width: 95%; /* Ancho completo en dispositivos pequeños */
+    }
+  }
+  .carouselContainer img {
+    width: 100%; 
+    height: auto;
+  }
+  .slick-slide {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+  }

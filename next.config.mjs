@@ -8,7 +8,9 @@ const nextConfig = {
               pathname: '/**',          // (opcional) Patrón de rutas (/** permite todas)
             },
           ],
+         unoptimized: true ,
       },
+      output: 'export',
 };
 
 export default nextConfig;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Footer } from "@/components/Footer"
 import { legalTranslations, LegalTranslations } from '@/utils/translations_legal'
 import { footerTranslations, FooterTranslations } from '@/utils/translations_footer'

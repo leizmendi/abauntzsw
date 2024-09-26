@@ -93,4 +93,11 @@ body {
   }
 }
 
-  
+.contentContainer {
+  display: flex;
+  flex-direction: column; /* Alinear el contenido verticalmente */
+  justify-content: center; /* Centrar el contenido horizontalmente */
+  align-items: center; /* Centrar el contenido verticalmente */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  padding: 20px; /* Añade espacio alrededor del contenido */
+}  

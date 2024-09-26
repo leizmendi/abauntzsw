@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image"
-import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Globe, ArrowLeft } from "lucide-react"
 import { Navbar } from '@/components/Navbar';
 import { Footer } from "@/components/Footer";
 
@@ -28,12 +26,8 @@ export default function R4Page() {
       <Navbar toggleLanguage={toggleLanguage} language={language} navItems={t.nav} />
       <main className="flex-1 pt-20">
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container px-4 md:px-responsive-x">
-            <Link href={`/?lang=${language}`} className="inline-flex items-center text-[#8B1C1C] hover:underline mb-6">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              {t.nav.home}
-            </Link>
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-[#8B1C1C]">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl/none text-[#8B1C1C]">
               {t.r4.title}
             </h1>
             <p className="mt-4 text-xl text-gray-600">
