@@ -14,7 +14,7 @@ import { useState, useEffect } from "react"
 import Card from '@/components/Card';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Coffee, Hotel, Scissors, Zap, Lock, Users, Laptop} from "lucide-react"
+import { Coffee, Tent, Hotel, Scissors, Zap, Lock, Users, Laptop} from "lucide-react"
 
 
 
@@ -57,7 +57,7 @@ export default function LandingPage() {
                 </h2>
                 <div className="grid gap-10 sm:grid-cols-2 items-start">
                   <Card
-                    icon={<Hotel className="w-12 h-12 text-[#8B1C1C]" />}
+                    icon={<Tent className="w-12 h-12 text-[#8B1C1C]" />}
                     title="H4"
                     subtitle={t.products.h4.title}
                     description={t.products.h4.description}
@@ -95,7 +95,8 @@ export default function LandingPage() {
                       borderStyle='dashed'
                       borderWidth='4'
                       />
-                  </div>
+                                        
+                </div>
               </div>
             </section>
             <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">

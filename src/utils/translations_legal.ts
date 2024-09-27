@@ -25,7 +25,7 @@ export const legalTranslations: Record<Language, LegalTranslations> = {
 
     <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se exponen los siguientes datos:</p>
 
-    <p>El titular de esta web es Lorenzo Eizmendi Apellaniz, con domicilio en C/ La Asunción 41-A. 31797 Arraitz, Ultzama (Navarra), con CIF 15962011-B (en adelante, ABAUNTZ S.), cuyo correo electrónico de contacto es info@abauntzsoftware.com y teléfono de contacto 677 45 34 30.</p>
+    <p>El titular de esta web es Lorenzo Eizmendi Apellaniz, con domicilio en C/ La Asunción 41-A. 31797 Arraitz, Ultzama (Navarra), con CIF 15962011-B (en adelante, ABAUNTZ S.), cuyo correo electrónico de contacto es info@abauntzsoftware.com y teléfono de contacto seis-siete-siete, cuarenta y cinco, treinta y cuatro, treinta.</p>
 
     <h2>Propiedad Intelectual:</h2>
 
@@ -95,7 +95,7 @@ export const legalTranslations: Record<Language, LegalTranslations> = {
 
     <p>Informazioaren Gizartearen Zerbitzuei eta Merkataritza Elektronikoari buruzko uztailaren 11ko 34/2002 Legearen 10. artikuluan jasotako informazio betebeharra betez, honako datu hauek azaltzen dira:</p>
 
-    <p>Web honen titularra Lorenzo Eizmendi Apellaniz da, helbidea C/ La Asunción 41-A. 31797 Arraitz, Ultzama (Nafarroa), IFZ 15962011-B (aurrerantzean, ABAUNTZ S.), harremanetarako helbide elektronikoa info@abauntzsoftware.com eta harremanetarako telefonoa 677 45 34 30.</p>
+    <p>Web honen titularra Lorenzo Eizmendi Apellaniz da, helbidea C/ La Asunción 41-A. 31797 Arraitz, Ultzama (Nafarroa), IFZ 15962011-B (aurrerantzean, ABAUNTZ S.), harremanetarako helbide elektronikoa info@abauntzsoftware.com eta harremanetarako telefonoa sei zazpi zazpi, lau bost, hiru lau, hiru zero.</p>
 
     <h2>Jabetza Intelektuala:</h2>
 

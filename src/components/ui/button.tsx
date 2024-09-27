@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-
+import { Eye, EyeOff } from "lucide-react";
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+          "bg-[#8B1C1C] text-primary-foreground shadow hover:bg-green-700",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
@@ -21,7 +21,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-9 px-4 py-2",
+        default: "h-9 px-4 py-2 pr-10",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
@@ -37,18 +37,31 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+  asChild?: boolean;
+  showEyeOnHover?: boolean; // Nueva prop  
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, showEyeOnHover = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ variant, size, className }), 
+        "relative group flex items-center justify-center"
+      )}
         ref={ref}
         {...props}
-      />
+      >
+        {props.children}
+        <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+          {showEyeOnHover ? (
+            <Eye className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          ) : (
+            <EyeOff className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          )}
+        </div>
+      </Comp>        
     )
   }
 )
