@@ -88,7 +88,7 @@ export const homeTranslations: Record<string, HomeTranslations> = {
       title: "Servicios a Medida",
       subtitle: "Desarrollo de Aplicaciones Personalizadas",
       description: "Diseñamos bases de datos y aplicaciones adaptadas a las necesidades específicas de tu negocio. Desde la generación de documentos hasta la gestión integral de procesos empresariales.",
-      cta: "Solicitar información",
+      cta: "Algunos ejemplos",
     },
     why: {
       title: "¿Por qué elegir Abauntz Software?",
@@ -149,7 +149,7 @@ export const homeTranslations: Record<string, HomeTranslations> = {
       title: "Neurrira egindako Zerbitzuak",
       subtitle: "Aplikazio Pertsonalizatuen Garapena",
       description: "Zure negozioaren behar espezifikoetara egokitutako datu-baseak eta aplikazioak diseinatzen ditugu. Dokumentuen sorkuntzatik enpresa-prozesuen kudeaketa integralera.",
-      cta: "Informazioa eskatu",
+      cta: "Adibide batzuk",
     },
     why: {
       title: "Zergatik aukeratu Abauntz Software?",

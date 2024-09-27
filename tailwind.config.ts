@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import type { PluginAPI } from "tailwindcss/types/config"
 
 const config: Config = {
     darkMode: ["class"],
@@ -58,9 +59,32 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
-  	}
+  		},
+		boxShadow: {
+		'custom-light': '0 12px 14px rgba(0, 0, 0, 0.5)',
+		'custom-dark': '0 4px 8px rgba(0, 0, 0, 0.25)',
+		},	
+		textShadow: {
+			// Define aquí las sombras que necesites
+			'default': '2px 2px 4px rgba(0, 0, 0, 0.25)',  // Sombra estándar
+			'lg': '4px 4px 6px rgba(0, 0, 0, 0.3)',  // Sombra más grande
+		},			
+  	},
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),
+			function (api: PluginAPI) { // Definir el tipo explícito de `api`
+				const { addUtilities } = api;
+				const newUtilities = {
+				'.text-shadow': {
+					textShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)', // Definir clase de sombra predeterminada
+				},
+				'.text-shadow-lg': {
+					textShadow: '4px 4px 6px rgba(0, 0, 0, 0.3)', // Clase de sombra más grande
+				},
+				};
+				addUtilities(newUtilities);
+			},
+  ],
+  
 };
 export default config;

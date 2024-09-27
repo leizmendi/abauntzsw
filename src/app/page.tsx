@@ -10,9 +10,8 @@ import { footerTranslations, FooterTranslations } from '@/utils/translations_foo
 import { Language } from '@/utils/types'
 import { getStoredLanguage, setStoredLanguage } from '@/utils/languageUtils';
 
-//import Image from "next/image"
-import Link from "next/link"
 import { useState, useEffect } from "react"
+import Card from '@/components/Card';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Coffee, Hotel, Scissors, Zap, Lock, Users, Laptop} from "lucide-react"
@@ -53,53 +52,55 @@ export default function LandingPage() {
             <Carousel images={slides} />
             <section id="productos" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
               <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-[#8B1C1C]">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-[#8B1C1C] text-shadow">
                   {t.products.title}
                 </h2>
                 <div className="grid gap-10 sm:grid-cols-2 items-start">
-                  <div className="flex flex-col items-center space-y-2 border-gray-200 p-4 rounded-lg bg-white shadow">
-                    <Hotel className="w-12 h-12 text-[#8B1C1C]" />
-                    <h2 className="text-2xl font-bold text-[#8B1C1C]">H4</h2>
-                    <h3 className="text-2xl font-bold">{t.products.h4.title}</h3>
-                    <p className="text-sm text-gray-500 text-center">
-                      {t.products.h4.description}
-                    </p>
-                    <Link href={`/productos/h4`} passHref>
-                      <Button className="mt-4">{t.products.h4.cta}</Button>
-                    </Link>
+                  <Card
+                    icon={<Hotel className="w-12 h-12 text-[#8B1C1C]" />}
+                    title="H4"
+                    subtitle={t.products.h4.title}
+                    description={t.products.h4.description}
+                    cta={t.products.h4.cta}
+                    href="/productos/h4"
+                    borderStyle='none'
+                    borderWidth='0'
+                  />
+                  <Card
+                    icon={<Coffee className="w-12 h-12 text-[#8B1C1C]" />}
+                    title="R4"
+                    subtitle={t.products.r4.title}
+                    description={t.products.r4.description}
+                    cta={t.products.r4.cta}
+                    href="/productos/r4"
+                    borderStyle='none'
+                    borderWidth = '0'
+                  />
                   </div>
-                  <div className="flex flex-col items-center space-y-2 border-gray-200 p-4 rounded-lg bg-white shadow">
-                    <Coffee className="w-12 h-12 text-[#8B1C1C]" />
-                    <h2 className="text-2xl font-bold text-[#8B1C1C]">R4</h2>
-                    <h3 className="text-2xl font-bold">{t.products.r4.title}</h3>
-                    <p className="text-sm text-gray-500 text-center">
-                      {t.products.r4.description}
-                    </p>
-                    <Link href={`/productos/r4`} passHref>
-                      <Button className="mt-4">{t.products.r4.cta}</Button>
-                    </Link>                
-                  </div>
-                </div>
               </div>
             </section>
             <section id="servicios" className="w-full py-12 md:py-24 lg:py-32">
               <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-[#8B1C1C]">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-[#8B1C1C] text-shadow">
                   {t.services.title}
                 </h2>
-                <div className="flex flex-col items-center space-y-4 text-center">
-                  <Scissors className="w-16 h-16 text-[#8B1C1C]" />
-                  <h3 className="text-2xl font-bold">{t.services.subtitle}</h3>
-                  <p className="max-w-[600px] text-gray-500">
-                    {t.services.description}
-                  </p>
-                  <Button>{t.services.cta}</Button>
-                </div>
+                <div>
+                  <Card
+                      icon={<Scissors className="w-12 h-12 text-[#8B1C1C]" />}
+                      title="- - - - - - - - - - - - -"
+                      subtitle={t.services.subtitle}
+                      description={t.services.description}
+                      cta={t.services.cta}
+                      href="/"
+                      borderStyle='dashed'
+                      borderWidth='4'
+                      />
+                  </div>
               </div>
             </section>
             <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
               <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-[#8B1C1C]">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-[#8B1C1C] text-shadow">
                   {t.why.title}
                 </h2>
                 <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4 items-start">
