@@ -2,7 +2,7 @@
 
 //import { useSlides } from '@/hooks/useSlides';
 //import { Slider } from '@/components/Slider';
-import Carousel from '@/components/Carousel';
+import Carousel from '@/components/CarouselHome';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { homeTranslations } from '@/utils/translations_home'
@@ -41,7 +41,6 @@ export default function LandingPage() {
     setLanguage(newLang)
     setStoredLanguage(newLang)
   }
-
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar toggleLanguage={toggleLanguage} language={language} navItems={t.nav} />
@@ -49,7 +48,7 @@ export default function LandingPage() {
         {isClient && (
 
           <div className ="flex flex-col items-center">
-            <Carousel images={slides} />
+            <Carousel images ={slides} />
             <section id="productos" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
               <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-[#8B1C1C] text-shadow">

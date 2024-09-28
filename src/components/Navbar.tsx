@@ -8,10 +8,11 @@ import './Navbar.css';
 interface NavbarProps {
   toggleLanguage: () => void;
   language: string;
+  //icon?: React.FC; // Propiedad Icono que es un componente funcional
   navItems: { products: string; services: string; contact: string };
 }
 
-export const Navbar = ({ toggleLanguage, language, navItems }: NavbarProps) => {
+export const Navbar = ({ toggleLanguage, language, navItems, icon }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {

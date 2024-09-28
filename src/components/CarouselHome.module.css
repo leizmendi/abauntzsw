@@ -5,7 +5,7 @@
     position: relative; 
     box-shadow: 0px 14px 16px rgba(0, 0, 0, 1); /* Sombra inferior */
     overflow: hidden; /* Asegura que las imágenes no se desborden */
-    /*aspect-ratio: 960 / 345; /* Mantiene la relación de aspecto de las imágenes */
+    aspect-ratio: 960 / 345; /* Mantiene la relación de aspecto de las imágenes */
   }
   @media (max-width: 1200px) { /* Para pantallas medianas a grandes */
     .carouselContainer {

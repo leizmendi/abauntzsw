@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import styles from './Carousel.module.css';
+import styles from './Carousel.module.css'; // Tu archivo CSS
 
 interface ImageData {
   src: string;
@@ -11,39 +11,30 @@ interface ImageData {
 
 interface CarouselProps {
   images: ImageData[];
+  //onSlideChange: (currentIndex: number) => void; // Función que notifica el cambio de slide
 }
 
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const settings = {
-    dots: false, // No mostrar puntos de navegación
-    arrows: false, // No mostrar flechas
-    infinite: true, // Bucle infinito
-    autoplay: true, // Autoplay activado
-    autoplaySpeed: 5000, // Intervalo de autoplay en milisegundos
-    speed: 500, // Velocidad de transición
-    slidesToShow: 1, // Mostrar una imagen a la vez
-    slidesToScroll: 1, // Desplazarse una imagen a la vez
+    dots: true, 
+    infinite: true, 
+    autoplay: true, 
+    autoplaySpeed: 5000, 
+    speed: 500, 
+    slidesToShow: 1, 
+    slidesToScroll: 1,
+    //afterChange: (current: number) => onSlideChange(current), // Notificar cambio
   };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // No se necesita actualizar el estado currentSlide
-    },5000);// settings.autoplaySpeed);
-
-    return () => clearInterval(interval);
-  }, [images]);
 
   return (
     <div className={styles.carouselContainer}>
-        <Slider {...settings}>
+      <Slider {...settings}>
         {images.map((image, index) => (
-            <div key={index}>
-            <img src={image.src} 
-                 alt={image.altText}
-            />
-            </div>
+          <div key={index}>
+            <img src={image.src} alt={image.altText} className={styles.carouselImage} />
+          </div>
         ))}
-        </Slider>
+      </Slider>
     </div>
   );
 };
