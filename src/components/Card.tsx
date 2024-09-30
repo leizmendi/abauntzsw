@@ -26,7 +26,7 @@ const Card: React.FC<CardProps> = ({ icon, title, subtitle, description, cta, hr
       <h3 className="text-2xl font-bold">{subtitle}</h3>
       <p className="text-sm text-gray-500 text-center">{description}</p>
       <Link href={href} passHref>
-        <Button showEyeOnHover className="mt-4 text-base font-bold">{cta}</Button>
+        <Button className="mt-4 text-base font-bold">{cta}</Button>
       </Link>
     </div>
   );

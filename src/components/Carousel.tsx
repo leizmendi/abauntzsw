@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
+import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Carousel.module.css'; // Tu archivo CSS
@@ -31,7 +32,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index}>
-            <img src={image.src} alt={image.altText} className={styles.carouselImage} />
+            <Image 
+              src={image.src} 
+              alt={image.altText} 
+              width={100}
+              height={50}
+              className={styles.carouselImage} />
           </div>
         ))}
       </Slider>
