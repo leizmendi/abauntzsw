@@ -1,6 +1,4 @@
 "use client";
-
-import Image from "next/image"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Navbar } from '@/components/Navbar';
@@ -10,6 +8,10 @@ import { Language } from "@/utils/types";
 import { getStoredLanguage, setStoredLanguage } from "@/utils/languageUtils";
 import r4Translations from "@/utils/translations_r4";
 import { footerTranslations, FooterTranslations } from '@/utils/translations_footer'
+
+import { Heart, Settings, Calculator, PlusCircle, Key, Coffee } from 'lucide-react'
+import TabCtl from "@/components/TabCtl";
+import Carousel from "@/components/Carousel";
 
 export default function R4Page() {
       const [language, setLanguage] = useState<Language>(getStoredLanguage())
@@ -21,73 +23,54 @@ export default function R4Page() {
         setLanguage(newLang)
         setStoredLanguage(newLang)
       }
+    const slides = [
+        { src: '/images/R4/R4_01_puntoVentas.png', altText:  t.r4.altTextImg[0] },
+        { src: '/images/R4/R4_02_planoMesas.png', altText: t.r4.altTextImg[1] },
+        { src: '/images/R4/R4_03_puntoVentas 2.png', altText: t.r4.altTextImg[2] },
+        { src: '/images/R4/R4_04_pintxosComandero.png', altText: t.r4.altTextImg[3] },
+        { src: '/images/R4/R4_05_menuDelDia.png', altText: t.r4.altTextImg[4] },
+        { src: '/images/R4/R4_06_articulos.png', altText: t.r4.altTextImg[5] },
+        { src: '/images/R4/R4_07_planoMesas2.png', altText: t.r4.altTextImg[6] },
+        { src: '/images/R4/R4_08_listados.png', altText: t.r4.altTextImg[7] },
+        { src: '/images/R4/R4_09_listadosZ.png', altText: t.r4.altTextImg[8] },
+        { src: '/images/R4/R4_10_listadosVentasDiario.png', altText: t.r4.altTextImg[9]},
+      ];      
+    const sections_arr = [
+          {sect:'features', icon: <Heart />}
+        , {sect:'management', icon: <Settings />}
+        , {sect:'accounting', icon: <Calculator />}
+        , {sect:'optional', icon: <PlusCircle />}
+        , {sect:'benefits', icon: <Key />}
+      ] as const;
+
+    const sections = sections_arr.map((s) => ({
+        key: s.sect,  // sin comillas dentro de la plantilla literal
+        section: s.sect,  // sin comillas, porque es el valor de la variable
+        title: t.r4[s.sect].title,  // uso correcto de acceso a la propiedad
+        icon: s.icon,
+        items: t.r4[s.sect].list  // uso correcto de acceso a la propiedad
+      }));
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar toggleLanguage={toggleLanguage} language={language} navItems={t.nav} />
       <main className="flex-1 pt-20">
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl/none text-[#8B1C1C]">
-              {t.r4.title}
+          <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl space-y-8">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl text-[#8B1C1C] flex justify-between items-center">
+              <span>{t.r4.title}</span>
+              <Coffee className="h-12 w-12 ml-2" />
             </h1>
             <p className="mt-4 text-xl text-gray-600">
               {t.r4.subtitle}
             </p>
-            <div className="mt-8 grid gap-8 md:grid-cols-2">
-              <div>
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/software-de-gestion-H4-R4-Abauntz-Software-WNZUttpLLRKbmkEQNxcAghE9HY17H7.jpg"
-                  alt="R4 Software Interface"
-                  width={600}
-                  height={400}
-                  className="rounded-lg object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-gray-600">
-                  {t.r4.description}
-                </p>
-                <h2 className="mt-8 text-2xl font-bold text-[#8B1C1C]">{t.r4.features.title}</h2>
-                <ul className="mt-4 space-y-2">
-                  {t.r4.features.list.map((feature, index) => (
-                    <li key={index} className="flex items-center">
-                      <svg
-                        className="h-5 w-5 text-[#8B1C1C] mr-2"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="mt-12">
-              <h2 className="text-2xl font-bold text-[#8B1C1C]">{t.r4.benefits.title}</h2>
-              <ul className="mt-4 grid gap-4 md:grid-cols-2">
-                {t.r4.benefits.list.map((benefit, index) => (
-                  <li key={index} className="flex items-start">
-                    <svg
-                      className="h-6 w-6 text-[#8B1C1C] mr-2 mt-1"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
+            <p className="text-gray-600">
+              {t.r4.description}
+            </p>
+            <div className ="flex flex-col items-center w-full max-w-3xl mb-6">
+                <Carousel images={slides} />
+              </div>            
+            <div className="mt-12 grid gap-8">
+                  <TabCtl sections={sections}/>
             </div>
             <div className="mt-12 text-center">
               <Button className="bg-[#8B1C1C] text-white hover:bg-[#7A1818]">

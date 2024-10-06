@@ -26,3 +26,9 @@
     display: flex;
     justify-content: center; /* Centra el contenido horizontalmente */
   }
+  .caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #8B1C1C;
+    text-align: center;
+  }

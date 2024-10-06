@@ -11,7 +11,7 @@ import { getStoredLanguage, setStoredLanguage } from "@/utils/languageUtils";
 import h4Translations from "@/utils/translations_h4";
 import { footerTranslations, FooterTranslations } from '@/utils/translations_footer'
 //import ProductSectionList from "@/components/ProductSectionsList";
-import { Settings, BarChart, Calculator, Sliders, PlusCircle } from 'lucide-react'
+import { Heart, Settings, Calculator, PlusCircle, Key } from 'lucide-react'
 import TabCtl from "@/components/TabCtl";
 import Carousel from "@/components/Carousel";
 import { Tent } from "lucide-react";
@@ -28,16 +28,23 @@ export default function H4Page() {
     setStoredLanguage(newLang)
   }
   const slides = [
-    { src: '/images/H4/H4_01_planing.png', altText: 'Planing de reservas' },
-    { src: '/images/H4/H4_02_wubook.png', altText: 'Sincronización con motor de reservas Wubook' },
-    { src: '/images/H4/H4_03_fichaestancia.png', altText: 'Ficha de Estancia' },
+    { src: '/images/H4/H4_01_planing.png', altText: t.h4.altTextImg[0] },
+    { src: '/images/H4/H4_02_wubook.png', altText: t.h4.altTextImg[1] },
+    { src: '/images/H4/H4_03_fichaestancia.png', altText: t.h4.altTextImg[2] },
+    { src: '/images/H4/H4_04_facturas.png', altText: t.h4.altTextImg[3] },
+    { src: '/images/H4/H4_05_partegobernanta.png', altText: t.h4.altTextImg[4] },
+    { src: '/images/H4/H4_06_planoparcelas.png', altText: t.h4.altTextImg[5] },
+    { src: '/images/H4/H4_07_planing2.png', altText:t.h4.altTextImg[6] },
+    { src: '/images/H4/H4_08_parametrosEstablecimiento.png', altText: t.h4.altTextImg[7] },
+    { src: '/images/H4/H4_09_parametrosEmails.png', altText: t.h4.altTextImg[8] },
+    { src: '/images/H4/H4_10_listadosVentas.png', altText:t.h4.altTextImg[9] },
   ];
   
-const sections_arr = [{sect:'features', icon: <Settings />}
-                     , {sect:'management', icon: <BarChart />}
+const sections_arr = [{sect:'features', icon: <Heart />}
+                     , {sect:'management', icon: <Settings />}
                      , {sect:'accounting', icon: <Calculator />}
-                     , {sect:'optional', icon: <Sliders />}
-                     , {sect:'additional', icon: <PlusCircle />}] as const;
+                     , {sect:'optional', icon: <PlusCircle />}
+                     , {sect:'benefits', icon: <Key />}] as const;
 
 const sections = sections_arr.map((s) => ({
   key: s.sect,  // sin comillas dentro de la plantilla literal
@@ -67,7 +74,7 @@ const sections = sections_arr.map((s) => ({
               <Carousel images={slides} />
 
             </div>
-            <div className="mt-8 grid gap-8 md:grid-cols-2">
+            <div className="mt-8 grid gap-8">
               <TabCtl sections={sections}/>
             </div>
             <div className="mt-12 text-center">

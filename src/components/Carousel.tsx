@@ -16,6 +16,7 @@ interface CarouselProps {
 }
 
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
+  
   const settings = {
     dots: true, 
     infinite: true, 
@@ -35,9 +36,13 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             <Image 
               src={image.src} 
               alt={image.altText} 
-              width={100}
-              height={50}
-              className={styles.carouselImage} />
+              width={1920}
+              height={1080}
+              className={styles.carouselImage}
+              priority={index === 0} // Cargar la primera imagen con prioridad
+             />
+            {/* Pie de foto */}
+            <p className={styles.caption}>{image.altText}</p>
           </div>
         ))}
       </Slider>

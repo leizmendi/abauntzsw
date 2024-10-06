@@ -21,6 +21,7 @@ export const Navbar = ({ toggleLanguage, language, navItems }: NavbarProps) => {
   const handleMenuItemClick = () => {
     setIsOpen(false); // Cerrar el menú al seleccionar un elemento
   };
+
   return (
     <header className="fixed top-0 left-10 right-10 z-50 px-4 lg:px-6 h-20 flex items-center bg-white">
       <Link className="flex items-center justify-center" href={`/#`}>
@@ -35,13 +36,13 @@ export const Navbar = ({ toggleLanguage, language, navItems }: NavbarProps) => {
 
       {/* Menú normal para pantallas grandes */}
       <nav className={`ml-auto hidden sm:flex gap-4 sm:gap-6 text-[#8B1C1C]`}>
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href={`/?#productos`}>
+        <Link className="text-sm font-medium hover:underline underline-offset-4" href={`/#productos`}>
           {navItems.products}
         </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href={`/?#servicios`}>
+        <Link className="text-sm font-medium hover:underline underline-offset-4" href={`/#servicios`}>
           {navItems.services}
         </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href={`/?#contacto`}>
+        <Link className="text-sm font-medium hover:underline underline-offset-4" href={`/#contacto`}>
           {navItems.contact}
         </Link>
         <button onClick={toggleLanguage} className="flex items-center text-sm font-medium tooltip-container">

@@ -22,11 +22,21 @@ export interface H4Translations {
       title: string;
       list: string[];
     };
-    additional: {
+    benefits: {
       title: string;
       list: string[];
     };
+    prices: {
+      summary: string;
+      list:[
+        { product: string;
+          prix: string;
+          period: string;
+        }
+      ]
+    };
     cta: string;
+    altTextImg: string[];
   };
 }
 
@@ -41,61 +51,80 @@ export const h4Translations: Record<string, H4Translations> = {
     h4: {
       title: "H4 - Software de Gestión de Alojamientos",
       subtitle: "Solución completa para hoteles, campings y alojamientos rurales",
-      description: "H4 es un software de gestión de alojamientos especialmente diseñado para su utilización en establecimientos hoteleros, campings y alojamientos rurales. Ofrece las capacidades de los mejores programas del sector a un precio sorprendente y es de uso muy fácil.",
+      description: `H4 es un software de gestión de alojamientos diseñado específicamente para hoteles, campings y alojamientos rurales.
+      Este software busca ofrecer las funcionalidades de programas líderes en el sector a un precio competitivo y con una interfaz fácil de usar.`,
       features: {
         title: "Características Principales",
         list: [
-          "Panel de Control de Parcelas-Habitaciones",
-          "Planning de Reservas-Ocupación",
-          "Admisión de Clientes",
-          "Ficha de Cliente con Notas personales",
-          "Recibo y registro de pagos y adelantos",
-          "Emisión de Facturas",
-          "Integración con Poli-Checkin para toma de datos del cliente"
+          "El software destaca por su panel de control de parcelas y habitaciones, que facilita el seguimiento de la disponibilidad.",
+          "Incorpora un sistema de planificación de reservas que permite visualizar la ocupación y gestionar las reservas de forma eficiente.",
+          "Simplifica el proceso de admisión de clientes y almacena la información de cada cliente en una ficha personalizable.",
+          "Permite registrar pagos y anticipos, y emitir facturas de forma automatizada.",
+          "Se integra con Poli-Checkin para agilizar la toma de datos del cliente."
         ]
       },
       management: {
-        title: "Tareas de Gestión",
+        title: "Gestión Operativa",
         list: [
-          "Envío de entrada de viajeros a Policía",
-          "Parte de Gobernanta",
-          "Listado para el Instituto Nacional de Estadística",
-          "Listado de Servicios de Comedor previstos del Día"
+          "Facilita el envío de partes de entrada de viajeros a la policía.",
+          "Permite generar el parte de gobernanta para el control del estado de las habitaciones.",
+          "Simplifica la generación de listados para el Instituto Nacional de Estadística.",
+          "Permite elaborar un listado de los servicios de comedor previstos para cada día."
         ]
       },
       accounting: {
-        title: "Contabilidad",
+        title: "Gestión Contable",
         list: [
-          "Registro de Facturas Emitidas y Otros Ingresos",
-          "Registro de Facturas Recibidas",
-          "Listado de Caja",
-          "Listado de Compras y Gastos",
-          "Listado de Ventas e ingresos",
-          "Listado Trimestral y anual de IVA"
+          "Registra las facturas emitidas y otros ingresos.",
+          "Permite registrar las facturas recibidas.",
+          "Genera un listado de caja para el control de ingresos y egresos.",
+          "Facilita el seguimiento de las compras y gastos.",
+          "Permite obtener un listado de ventas e ingresos.",
+          "Genera un listado trimestral y anual del IVA."
         ]
       },
       optional: {
-        title: "Módulos Opcionales",
+        title: "Motor de reservas Web y Channel manager",
         list: [
-          "Escaneo y lectura automática de documentos de identidad",
-          "Captura de firmas",
-          "Enlace a contabilidad",
-          "Mantenimiento anual"
+          "Integrado con el motor de reservas y channel manager de Wubook, con un servicio de soporte de calidad",
+          "El software ofrece otros módulos opcionales como el escaneo y lectura automática de documentos de identidad, la captura de firmas, el enlace a contabilidad y el mantenimiento anual.",
+          "Entre sus características adicionales destacan el cuadro de disponibilidad interactivo, la confirmación de reservas por correo electrónico, la generación de presupuestos y facturas en varios idiomas, la gestión de servicios de comedor, la generación de documentos en PDF y el archivo de imágenes en la ficha de estancia."
         ]
       },
-      additional: {
-        title: "Características Adicionales",
+      benefits: {
+        title: "Beneficios Clave",
         list: [
-          "Cuadro de disponibilidad - ocupación interactivo (Planning)",
-          "Confirmación de reserva y envío por e-mail",
-          "Facturación - Presupuestos",
-          "Varios idiomas para Conceptos de facturación",
-          "Servicios de comedor",
-          "Generación de documentos en PDF y envíos por e-mail",
-          "Archivo de imágenes en Ficha de estancia"
+          "Solución integral que cubre las necesidades operativas y de gestión de diferentes tipos de alojamientos.",
+          "Interfaz amigable que facilita su uso a usuarios con diferentes niveles de experiencia.",
+          "Ahorro de tiempo y reducción de errores mediante la automatización de tareas.",
+          "Información en tiempo real para la toma de decisiones estratégicas.",
+          "Mejora de la experiencia del cliente gracias a una gestión más eficiente."
         ]
       },
-      cta: "Solicitar Información"
+      prices: {
+        summary: '',
+        list:[
+          {
+            product:'',
+            prix:'',
+            period:''
+          }
+        ]
+      },
+      cta: "Solicitar Información",
+      altTextImg:[
+        'Planing de reservas',
+        'Sincronización con motor de reservas Wubook',
+        'Ficha de Estancia',
+        'Facturas',
+        'Parte de Gobernanta',
+        'Plano de Parcelas',
+        'Planing de reservas',
+        'Parámetros Establecimiento',
+        'Parámetros Emails',
+        'Listado de Ventas'
+      ]
+
     }
   },
   eu: {
@@ -106,63 +135,81 @@ export const h4Translations: Record<string, H4Translations> = {
         contact: "Kontaktua",
       },
       h4: {
-        title: "H4 - Ostatu Kudeaketarako Softwarea",
-        subtitle: "Hotel, kanpin eta landa-etxeetarako soluzio osoa",
-        description: "H4 ostatu-kudeaketarako software bat da, bereziki hotel, kanpin eta landa-etxeetan erabiltzeko diseinatua. Sektoreko programa onenen gaitasunak eskaintzen ditu harrigarriro prezio onean eta oso erabilera errazekoa da.",
+        title: "H4 - Ostatuak kudeatzeko softwarea",
+        subtitle: "Hotel, kanpin eta landa ostatuetarako irtenbide osoa",
+        description: `H4 hoteletarako, kanpinetarako eta landa-ostatuetarako bereziki diseinatutako ostatuak kudeatzeko softwarea da.
+ Software honek sektoreko punta-puntako programen funtzionalitateak prezio lehiakorrean eta erabiltzeko erraza den interfazearekin eskaini nahi ditu`,
         features: {
           title: "Ezaugarri Nagusiak",
           list: [
-            "Partzela-Gelen Kontrol Panela",
-            "Erreserba-Okupazio Plangintza",
-            "Bezeroen Harrera",
-            "Bezeroaren Fitxa Ohar pertsonalekin",
-            "Ordainketen eta aurrerakinen harrera eta erregistroa",
-            "Fakturen Jaulkipena",
-            "Poli-Checkin-ekin integrazioa bezeroaren datuak hartzeko"
+            "Softwarea lursailaren eta gelaren kontrol panelagatik nabarmentzen da, erabilgarritasunaren jarraipena errazten duena",
+            "Erreserbak planifikatzeko sistema bat dauka, okupazioa ikusteko eta erreserbak modu eraginkorrean kudeatzeko aukera ematen duena",
+            "Bezeroak onartzeko prozesua errazten du eta bezero bakoitzaren informazioa fitxategi pertsonalizatu batean gordetzen du",
+            "Ordainketak eta aurrerakinak erregistratzeko eta fakturak modu automatizatuan emateko aukera ematen du",
+            "Poli-Checkin-ekin integratzen da bezeroen datu bilketa bizkortzeko"
           ]
         },
         management: {
-          title: "Kudeaketa Zereginak",
+          title: "Kudeaketa Operatiboa",
           list: [
-            "Bidaiarien sarrera Poliziara bidaltzea",
-            "Gobernantearen Txostena",
-            "Estatistika Institutu Nazionalerako Zerrenda",
-            "Eguneko Aurreikusitako Jantoki Zerbitzuen Zerrenda"
+            "Bidaiarien sarrera-txostenak poliziari bidaltzea errazten du",
+            "Etxezainaren txostena sortzeko aukera ematen du gelen egoera kontrolatzeko.",
+            "Estatistika Institutu Nazionalerako zerrendak sortzea errazten du.",
+            "Egun bakoitzerako ematen diren jantoki zerbitzuen zerrenda prestatzeko aukera ematen du"
           ]
         },
         accounting: {
-          title: "Kontabilitatea",
+          title: "Kontabilitatearen Kudeaketa",
           list: [
-            "Jaulkitako Fakturen eta Beste Sarreren Erregistroa",
-            "Jasotako Fakturen Erregistroa",
-            "Kutxako Zerrenda",
-            "Erosketa eta Gastuen Zerrenda",
-            "Salmenta eta Sarreren Zerrenda",
-            "BEZaren Hiruhileko eta Urteko Zerrenda"
+            "Erregistroak jaulkitako fakturak eta bestelako diru-sarrerak",
+            "Jasotako fakturak erregistratzeko aukera ematen dizu.",
+            "Diru-zerrenda bat sortzen du diru-sarrerak eta gastuak kontrolatzeko",
+            "Erosketen eta gastuen jarraipena errazten du.",
+            "Salmenta eta diru-sarreren zerrenda lortzeko aukera ematen du.",
+            "BEZaren hiruhileko eta urteko zerrenda sortzen du"
           ]
         },
         optional: {
-          title: "Aukerako Moduluak",
+          title: "Web erreserba motorra eta Channel manager",
           list: [
-            "Nortasun-agirien eskaneatze eta irakurketa automatikoa",
-            "Sinadura hartzea",
-            "Kontabilitaterako lotura",
-            "Urteko mantentzea"
+              "Wubook-en erreserba-motorrekin eta kanal-kudeatzailearekin integratua, kalitatezko laguntza-zerbitzuarekin",
+              "Softwareak aukerako moduluak eskaintzen ditu, hala nola, nortasun dokumentuen eskaneatu eta irakurketa automatikoa, sinadura harrapatzea, kontabilitaterako esteka eta urteko mantentze-lanak",
+              "Ezaugarrien artean erabilgarritasun-taula interaktiboa, posta elektroniko bidezko erreserbaren berrespena, aurrekontuak eta fakturak hizkuntza anitzetan sortzea, jangela-zerbitzuen kudeaketa, PDF dokumentuak sortzea eta egonaldi-txartelean irudiak artxibatzea"
           ]
         },
-        additional: {
-          title: "Ezaugarri Gehigarriak",
+        benefits: {
+          title: "Abantail Nagusiak",
           list: [
-            "Erabilgarritasun - okupazio koadro interaktiboa (Plangintza)",
-            "Erreserba-baieztapena eta e-postaz bidaltzea",
-            "Fakturazioa - Aurrekontuak",
-            "Hainbat hizkuntza fakturazio-kontzeptuetarako",
-            "Jantoki zerbitzuak",
-            "PDF dokumentuen sorrera eta e-postaz bidaltzea",
-            "Irudien artxiboa Egonaldi Fitxan"
+            "Ostatu mota ezberdinen operazio- eta kudeaketa-beharrak estaltzen dituen irtenbide integrala",
+            "Interfaze atsegina, esperientzia-maila desberdinak dituzten erabiltzaileei erabiltzeko erraza egiten diena.",
+            "Denbora aurreztea eta erroreen murrizketa zereginen automatizazioaren bidez.",
+            "Erabaki estrategikoak hartzeko denbora errealeko informazioa",
+            "Bezeroaren esperientzia hobetu da kudeaketa eraginkorragoari esker"
           ]
         },
-        cta: "Informazioa Eskatu"
+        prices: {
+          summary: '',
+          list:[
+            {
+              product:'',
+              prix:'',
+              period:''
+            }
+          ]
+        },
+          cta: "Informazioa Eskatu",
+        altTextImg:[
+          'Erreserben Plangintza',
+          'Wubook erreserba-motorrarekin sinkronizatzea',
+          '',
+          'Fakturak',
+          'Gobernantearen Partea',
+          'Partzelaren Plana',
+          'Erreserben Plangintza',
+          'Establezimendu-parametroak',
+          'Posta elektronikoaren parametroak',
+          'Salmenta Zerrenda'
+        ]
       }
     }
   };

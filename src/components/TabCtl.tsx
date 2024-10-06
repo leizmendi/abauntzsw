@@ -1,6 +1,5 @@
 import * as Tabs from '@radix-ui/react-tabs'; // Importa Tabs de Radix UI
 import ProductSectionList from './ProductSectionsList';
-import { Settings, BarChart, Calculator, Sliders, PlusCircle } from 'lucide-react'
 import { ReactNode } from 'react';
 // Componente que contiene las pestañas y el listado de secciones
 interface TabCtlProps {
@@ -36,6 +35,7 @@ interface TabCtlProps {
             <ProductSectionList
               section={sectionData.section}
               title={sectionData.title}
+              icon={sectionData.icon}
               items={sectionData.items}
             />
           </Tabs.Content>
