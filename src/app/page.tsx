@@ -12,9 +12,10 @@ import { getStoredLanguage, setStoredLanguage } from '@/utils/languageUtils';
 
 import { useState, useEffect } from "react"
 import Card from '@/components/Card';
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+//import { Button } from "@/components/ui/button"
+//import { Input } from "@/components/ui/input"
 import { Coffee, Tent, Scissors, Zap, Lock, Users, Laptop} from "lucide-react"
+import { ContactForm } from '@/components/FormContact';
 
 
 
@@ -147,13 +148,7 @@ export default function LandingPage() {
                     </p>
                   </div>
                   <div className="w-full max-w-sm space-y-2">
-                    <form className="flex flex-col space-y-2">
-                      <Input type="text" placeholder={t.contact.name} className="bg-white" />
-                      <Input type="email" placeholder={t.contact.email} className="bg-white" />
-                      <Input type="tel" placeholder={t.contact.phone} className="bg-white" />
-                      <Input type="msg" placeholder={t.contact.message} className="bg-white" />
-                      <Button type="submit" className="bg-white text-[#8B1C1C] hover:bg-gray-100">{t.contact.submit}</Button>
-                    </form>
+                    <ContactForm lang={language} source='Home page'/>
                   </div>
                 </div>
               </div>

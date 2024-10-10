@@ -15,11 +15,19 @@ import { Heart, Settings, Calculator, PlusCircle, Key } from 'lucide-react'
 import TabCtl from "@/components/TabCtl";
 import Carousel from "@/components/Carousel";
 import { Tent } from "lucide-react";
+import { ContactForm } from "@/components/FormContact";
 
 export default function H4Page() {
   const [language, setLanguage] = useState<Language>(getStoredLanguage())
   const t = h4Translations[language]
   const footerT: FooterTranslations = footerTranslations[language]
+
+  const [isFormVisible, setIsFormVisible] = useState(false) // Controla la visibilidad del formulario
+
+  const toggleFormVisibility = () => {
+    setIsFormVisible(!isFormVisible)
+  }
+
 
 
   const toggleLanguage = () => {
@@ -49,9 +57,9 @@ const sections_arr = [{sect:'features', icon: <Heart />}
 const sections = sections_arr.map((s) => ({
   key: s.sect,  // sin comillas dentro de la plantilla literal
   section: s.sect,  // sin comillas, porque es el valor de la variable
-  title: t.h4[s.sect].title,  // uso correcto de acceso a la propiedad
+  title: t.h4[s.sect].title,
   icon: s.icon,
-  items: t.h4[s.sect].list  // uso correcto de acceso a la propiedad
+  items: t.h4[s.sect].list 
 }));
 
     return (
@@ -78,9 +86,9 @@ const sections = sections_arr.map((s) => ({
               <TabCtl sections={sections}/>
             </div>
             <div className="mt-12 text-center">
-              <Button className="bg-[#8B1C1C] text-white hover:bg-[#7A1818]">
-                {t.h4.cta}
-              </Button>
+            {! isFormVisible && (<Button onClick={toggleFormVisibility}  className="mt-4 text-base font-bold">{t.h4.cta}</Button>)}
+              {isFormVisible && (
+              <ContactForm lang={language} source="H4 page" submitButtonClassName="mt-4 text-base font-bold" />)}
             </div>
           </div>
         </section>

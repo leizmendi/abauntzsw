@@ -12,10 +12,18 @@ import { footerTranslations, FooterTranslations } from '@/utils/translations_foo
 import { Heart, Settings, Calculator, PlusCircle, Key, Coffee } from 'lucide-react'
 import TabCtl from "@/components/TabCtl";
 import Carousel from "@/components/Carousel";
+import { ContactForm } from "@/components/FormContact";
 
 export default function R4Page() {
       const [language, setLanguage] = useState<Language>(getStoredLanguage())
     const t = r4Translations[language]
+
+    const [isFormVisible, setIsFormVisible] = useState(false) // Controla la visibilidad del formulario
+
+    const toggleFormVisibility = () => {
+      setIsFormVisible(!isFormVisible)
+    }
+
     const footerT: FooterTranslations = footerTranslations[language]
 
     const toggleLanguage = () => {
@@ -73,9 +81,9 @@ export default function R4Page() {
                   <TabCtl sections={sections}/>
             </div>
             <div className="mt-12 text-center">
-              <Button className="bg-[#8B1C1C] text-white hover:bg-[#7A1818]">
-                {t.r4.cta}
-              </Button>
+            {! isFormVisible && (<Button onClick={toggleFormVisibility}  className="mt-4 text-base font-bold">{t.r4.cta}</Button>)}
+              {isFormVisible && (
+              <ContactForm lang={language} source="R4 page" submitButtonClassName="mt-4 text-base font-bold" />)}
             </div>
           </div>
         </section>

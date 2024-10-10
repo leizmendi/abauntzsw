@@ -1,6 +1,7 @@
 import { NavItems } from './types';
 
 export interface HomeTranslations {
+  hl: string;
   nav: NavItems;
   hero: {
     title: string;
@@ -49,16 +50,12 @@ export interface HomeTranslations {
   contact: {
     title: string;
     subtitle: string;
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-    submit: string;
   };
 }
 
 export const homeTranslations: Record<string, HomeTranslations> = {
   es: {
+    hl: "es",
     nav: {
       home: "Inicio",
       products: "Productos",
@@ -112,14 +109,10 @@ export const homeTranslations: Record<string, HomeTranslations> = {
     contact: {
       title: "¿Listo para impulsar tu negocio?",
       subtitle: "Contáctanos hoy y descubre cómo nuestras soluciones de software pueden transformar tu empresa.",
-      name: "Nombre",
-      email: "Email",
-      phone: "Teléfono",
-      message: "Mensaje",
-      submit: "Solicitar información",
     },
   },
   eu: {
+    hl: "eu",
     nav: {
       home: "Hasiera",
       products: "Produktuak",
@@ -173,13 +166,7 @@ export const homeTranslations: Record<string, HomeTranslations> = {
     contact: {
       title: "Prest zaude zure negozioa bultzatzeko?",
       subtitle: "Jarri gurekin harremanetan gaur eta ezagutu gure software soluzioak nola eraldatu dezaketen zure enpresa.",
-      name: "Izena",
-      email: "Emaila",
-      phone: "Telefonoa",
-      message: "Mezua",
-      submit: "Informazioa eskatu",
     },
-
   },
 };
 
